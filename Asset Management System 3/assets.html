@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Information</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles/global.css" />
+		<link rel="stylesheet" href="styles/assets.css" />
+		<script src="scripts/assets.js" defer></script>
+	</head>
+	<body>
+		<div class="generate-barcode" id="generateBarcodeModal">
+			<header>
+				<button type="button" onclick="closeGenerateBarcode()">
+					<img src="assets/icons/arrow-left.svg" alt="back" />
+				</button>
+				<span><strong>Generate Barcode</strong></span>
+			</header>
+			<div class="container">
+				<span>Product Information</span>
+				<div class="input">
+					<label for="isbn">ISBN</label>
+					<input
+						type="text"
+						id="isbn"
+						placeholder="18549461946101"
+						value="18549461946101"
+					/>
+				</div>
+				<button
+					type="button"
+					class="add-asset-button"
+					onclick="generateBarcode()"
+				>
+					Generate Barcode
+				</button>
+				<div id="showBarcode">
+					<img src="assets/bar-codesvg.svg" alt="barcode" />
+					<div>
+						<button type="button" class="download-barcode">
+							Download
+						</button>
+						<button type="button" class="link-barcode">
+							Link to Asset
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="add-asset" id="editAssetModal">
+			<header>
+				<button type="button" onclick="closeEditAsset()">
+					<img src="assets/icons/arrow-left.svg" alt="back" />
+				</button>
+				<span><strong>Edit Asset</strong></span>
+			</header>
+			<div class="container">
+				<div class="input">
+					<label for="assetname">Asset Name</label>
+					<input
+						type="text"
+						id="assetname"
+						placeholder="Asset name_01"
+					/>
+				</div>
+				<div class="input">
+					<label for="description">Description</label>
+					<input
+						type="text"
+						id="description"
+						placeholder="Lorem ipsum"
+					/>
+				</div>
+				<div class="input">
+					<label for="quantity">Quantity</label>
+					<input type="text" id="quantity" placeholder="24" />
+				</div>
+				<div class="input">
+					<label for="assigned">Assigned</label>
+					<input type="checkbox" id="assigned" checked />
+				</div>
+				<div class="input">
+					<label for="assignedTo">Assigned to</label>
+					<select name="assignedTo" id="assignedTo">
+						<option value="" disabled>Select</option>
+						<option value="Testuser01">Testuser01</option>
+						<option value="Testuser02" selected>Testuser02</option>
+						<option value="Testuser03">Testuser03</option>
+					</select>
+				</div>
+				<div class="input">
+					<label for="barcode">Bar code</label>
+					<input
+						type="text"
+						id="barcode"
+						placeholder="Add image"
+						value="IMG1283"
+					/>
+					<div class="input-buttons">
+						<button type="button">
+							<img src="assets/icons/image.svg" alt="upload" />
+							<span>Choose image</span>
+						</button>
+						<button type="button" onclick="openGenerateBarcode()">
+							<img
+								src="assets/icons/bar-code.svg"
+								alt="bar code"
+							/>
+							<span>Generate barcode</span>
+						</button>
+					</div>
+				</div>
+				<button type="button" class="add-asset-button">
+					Save Changes
+				</button>
+			</div>
+		</div>
+		<div class="add-asset" id="addAssetModal">
+			<header>
+				<button type="button" onclick="closeLogAsset()">
+					<img src="assets/icons/arrow-left.svg" alt="back" />
+				</button>
+				<span><strong>Log Assets</strong></span>
+			</header>
+			<div class="container">
+				<div class="input">
+					<label for="assetname">Asset Name</label>
+					<input
+						type="text"
+						id="assetname"
+						placeholder="Asset name_01"
+					/>
+				</div>
+				<div class="input">
+					<label for="description">Description</label>
+					<input
+						type="text"
+						id="description"
+						placeholder="Lorem ipsum"
+					/>
+				</div>
+				<div class="input">
+					<label for="quantity">Quantity</label>
+					<input type="text" id="quantity" placeholder="24" />
+				</div>
+				<div class="input">
+					<label for="assigned">Assigned</label>
+					<input type="checkbox" id="assigned" />
+				</div>
+				<div class="input">
+					<label for="assignedTo">Assigned to</label>
+					<select name="assignedTo" id="assignedTo">
+						<option value="" disabled selected>Select</option>
+						<option value="Testuser01">Testuser01</option>
+						<option value="Testuser02">Testuser02</option>
+						<option value="Testuser03">Testuser03</option>
+					</select>
+				</div>
+				<div class="input">
+					<label for="barcode">Bar code</label>
+					<input type="text" id="barcode" placeholder="Add image" />
+					<div class="input-buttons">
+						<button type="button">
+							<img src="assets/icons/image.svg" alt="upload" />
+							<span>Choose image</span>
+						</button>
+						<button type="button" onclick="openGenerateBarcode()">
+							<img
+								src="assets/icons/bar-code.svg"
+								alt="bar code"
+							/>
+							<span>Generate barcode</span>
+						</button>
+					</div>
+				</div>
+				<button type="button" class="add-asset-button">
+					Add Asset
+				</button>
+			</div>
+		</div>
+		<header>
+			<span><strong>Assets</strong></span>
+			<button type="button" class="add" onclick="addAssetButton()">
+				<img src="assets/icons/add.svg" alt="add" />
+			</button>
+		</header>
+		<div class="container">
+			<div class="card">
+				<div class="card-details">
+					<div class="card-item">
+						<div class="card-name-container">
+							<span class="card-name">m3508</span>
+							<span>Motor</span>
+						</div>
+						<div class="card-unit-container">
+							<span class="card-unit">5</span>
+							<span>Units</span>
+						</div>
+					</div>
+					<div class="card-item card-assigned">
+						<span>01 Apr 2024 18:37:33</span>
+					</div>
+					<div class="card-item card-assigned">
+						<span>Assigned: <strong>True</strong></span>
+						<span>Assigned to: <strong>Testuser01</strong></span>
+					</div>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/bar-code.svg" alt="barcode" />
+						<span>Barcode</span>
+					</div>
+					<button
+						type="button"
+						class="card-action"
+						onclick="editAssetButton()"
+					>
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</button>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-details">
+					<div class="card-item">
+						<div class="card-name-container">
+							<span class="card-name">m3508</span>
+							<span>Motor</span>
+						</div>
+						<div class="card-unit-container">
+							<span class="card-unit">5</span>
+							<span>Units</span>
+						</div>
+					</div>
+					<div class="card-item card-assigned">
+						<span>01 Apr 2024 18:37:33</span>
+					</div>
+					<div class="card-item card-assigned">
+						<span>Assigned: <strong>True</strong></span>
+						<span>Assigned to: <strong>Testuser01</strong></span>
+					</div>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/bar-code.svg" alt="barcode" />
+						<span>Barcode</span>
+					</div>
+					<button
+						type="button"
+						class="card-action"
+						onclick="editAssetButton()"
+					>
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</button>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-details">
+					<div class="card-item">
+						<div class="card-name-container">
+							<span class="card-name">m3508</span>
+							<span>Motor</span>
+						</div>
+						<div class="card-unit-container">
+							<span class="card-unit">5</span>
+							<span>Units</span>
+						</div>
+					</div>
+					<div class="card-item card-assigned">
+						<span>01 Apr 2024 18:37:33</span>
+					</div>
+					<div class="card-item card-assigned">
+						<span>Assigned: <strong>True</strong></span>
+						<span>Assigned to: <strong>Testuser01</strong></span>
+					</div>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/bar-code.svg" alt="barcode" />
+						<span>Barcode</span>
+					</div>
+					<button
+						type="button"
+						class="card-action"
+						onclick="editAssetButton()"
+					>
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</button>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-buttons">
+				<a href="/">
+					<img src="assets/icons/home.svg" alt="home" />
+					<span>Home</span>
+				</a>
+				<a href="assets.html" class="active">
+					<img src="assets/icons/assets.svg" alt="assets" />
+					<span>Assets</span>
+				</a>
+				<a href="users.html">
+					<img src="assets/icons/users.svg" alt="users" />
+					<span>Users</span>
+				</a>
+				<a href="information.html">
+					<img src="assets/icons/information.svg" alt="information" />
+					<span>Information</span>
+				</a>
+			</div>
+			<div class="divider" />
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,148 @@
+button {
+	border-width: 0px;
+	background-color: white;
+}
+
+.add-user {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	background-color: white;
+	z-index: 10;
+	overflow: hidden;
+	display: none;
+}
+
+.add-user > header > button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.add-user > header {
+	justify-content: flex-start;
+}
+
+.add-user > header * {
+	font-size: 24px;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 8px;
+	width: 100%;
+}
+
+.input > label {
+	font-size: 12px;
+}
+
+.input > input {
+	font-size: 18px;
+	width: 100%;
+	border-width: 0px;
+	outline: 0px;
+	border-bottom: 1px solid #D4D4D4;
+	padding-bottom: 17.5px;
+}
+
+.input > input::placeholder {
+	color: #586B7950;
+}
+
+.add-user-button {
+	background-color: #043ac4;
+	border-radius: 32px;
+	padding: 16px 32px;
+	color: white !important;
+	border-width: 0px;
+	outline: 0px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	padding-top: 5.2vh;
+	padding-bottom: 0px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add {
+	border-radius: 24px;
+	background-color: #043ac4;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container * {
+	font-size: 21px;
+	text-align: left;
+	color: #586b79;
+}
+
+.container {
+	justify-content: start;
+	align-items: flex-start;
+	gap: 24px;
+}
+
+.card {
+	border: 1px solid #e6e6e6;
+	border-radius: 24px;
+	padding: 24px;
+	width: calc(100% - 48px);
+	box-shadow: 0px 4px 12px rgba(194, 194, 194, 0.25);
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.card-details {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.card-name {
+	font-size: 24px;
+}
+
+.card-email {
+	font-size: 14px;
+}
+
+.card-actions {
+	display: flex;
+	flex-direction: row;
+	gap: 40px;
+}
+
+.card-action {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+}
+
+.card-action > img {
+	width: 24px;
+	height: 24px;
+}
+
+.card-action > span {
+	font-size: 12px;
+}

@@ -1,0 +1,27 @@
+header {
+	padding-top: 7.7vh;
+}
+
+.container * {
+	font-size: 21px;
+	text-align: center;
+}
+
+.container {
+	justify-content: space-evenly;
+}
+
+.container > img {
+	width: auto;
+	height: 25.5vh;
+}
+
+.container > button {
+	width: 281px;
+	height: 57px;
+	padding: 16px 32px;
+	border-width: 0px;
+	border-radius: 24px;
+	background-color: #e6ebf9;
+	color: #043ac4;
+}

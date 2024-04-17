@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Information</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles/global.css" />
+		<link rel="stylesheet" href="styles/users.css" />
+		<script src="scripts/users.js" defer></script>
+	</head>
+	<body>
+		<div class="add-user" id="addUserModal">
+			<header>
+				<button type="button" onclick="backButton()">
+					<img src="assets/icons/arrow-left.svg" alt="back" />
+				</button>
+				<span><strong>Add User</strong></span>
+			</header>
+			<div class="container">
+				<div class="input">
+					<label for="username">User name</label>
+					<input
+						type="text"
+						id="username"
+						placeholder="Enter user name"
+					/>
+				</div>
+				<div class="input">
+					<label for="email">Email Address</label>
+					<input
+						type="email"
+						id="email"
+						placeholder="Enter email address"
+					/>
+				</div>
+				<div class="input">
+					<label for="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						placeholder="Enter password"
+					/>
+				</div>
+				<div class="input">
+					<label for="confirm-password">Confirm Password</label>
+					<input
+						type="text"
+						id="confirm-password"
+						placeholder="Re-Enter password"
+					/>
+				</div>
+				<button type="button" class="add-user-button">Add User</button>
+			</div>
+		</div>
+		<header>
+			<span><strong>Users</strong></span>
+			<button type="button" class="add" onclick="addUserButton()">
+				<img src="assets/icons/add.svg" alt="add" />
+			</button>
+		</header>
+		<div class="container">
+			<div class="card">
+				<div class="card-details">
+					<span class="card-name">John Kennedy</span>
+					<span class="card-email">johnkennedy@gmail.com</span>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</div>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-details">
+					<span class="card-name">Esther Howard</span>
+					<span class="card-email">Ester.howard@example.com</span>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</div>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-details">
+					<span class="card-name">Cameron Williamson</span>
+					<span class="card-email"
+						>Williamsoncameron21@example.com</span
+					>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</div>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-details">
+					<span class="card-name">Guy Hawkins</span>
+					<span class="card-email">johnkennedy@gmail.com</span>
+				</div>
+				<div class="card-actions">
+					<div class="card-action">
+						<img src="assets/icons/edit.svg" alt="edit" />
+						<span>Edit</span>
+					</div>
+					<div class="card-action">
+						<img src="assets/icons/delete.svg" alt="delete" />
+						<span>Delete</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-buttons">
+				<a href="/">
+					<img src="assets/icons/home.svg" alt="home" />
+					<span>Home</span>
+				</a>
+				<a href="assets.html">
+					<img src="assets/icons/assets.svg" alt="assets" />
+					<span>Assets</span>
+				</a>
+				<a href="users.html" class="active">
+					<img src="assets/icons/users.svg" alt="users" />
+					<span>Users</span>
+				</a>
+				<a href="information.html">
+					<img src="assets/icons/information.svg" alt="information" />
+					<span>Information</span>
+				</a>
+			</div>
+			<div class="divider" />
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+header {
+	padding-top: 5.2vh;
+	padding-bottom: 0px;
+}
+
+.container * {
+	font-size: 21px;
+	text-align: left;
+	color: #586B79;
+}
